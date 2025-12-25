@@ -1,0 +1,14 @@
+image: alpine
+
+stages:
+  - deploy
+
+pages:
+  stage: deploy
+  script:
+    - echo "Publishing portfolio to GitLab Pages"
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
